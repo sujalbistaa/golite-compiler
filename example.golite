@@ -1,0 +1,8 @@
+let result = (10 + 5) * 2;
+print result;
+
+if (result == 30) {
+    print 1;
+} else {
+    print 0;
+}
