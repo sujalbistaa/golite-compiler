@@ -21,58 +21,56 @@ This project is ideal if you:
 - Care about performance tuning for specific workloads or hardware  
 
 ## 📦 Getting Started
+
 ### 1️⃣ Clone and build
+
 ```bash
 git clone https://github.com/YOURUSER/golite-compiler.git
 cd golite-compiler
 make build
+
+
 2️⃣ Run the interpreter
-bash
-Copy
-Edit
+
 ./golite run examples/hello.golite
+
 3️⃣ Compile to native code
-bash
-Copy
-Edit
+
+
 ./golite build examples/fib.golite -o fib
 ./fib
+
 📜 Example
+
 GoLite Code
 
-go
-Copy
-Edit
 let fib = func(n int) int {
     if n < 2 { return n }
     return fib(n-1) + fib(n-2)
 }
 
 print(fib(10))
+
 Compile & Run
 
-bash
-Copy
-Edit
+
 golite build fib.golite -o fib
 ./fib
+
 📊 Autotuning Example
-bash
-Copy
-Edit
+
 golite autotune examples/fib.golite \
     --bench ./benchmarks/fib_bench.sh \
     --iterations 50
 Output:
 
-json
-Copy
-Edit
+
 {
   "baseline_time_ms": 38.21,
   "optimized_time_ms": 31.12,
   "improvement_percent": 18.5
 }
+
 🛣 Roadmap
  Add JIT mode
 
